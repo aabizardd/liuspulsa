@@ -12,11 +12,12 @@
             integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
             crossorigin="anonymous" />
 
-        <link rel="icon" href="{!! asset('assets/img/xfavicon.png.pagespeed.ic.pBryiaU2YA.png') !!}">
+        <link rel="icon" href="{!! asset('assets/img/lp.png') !!}">
 
         <link rel="stylesheet" href="{!! asset('css/style-2.css') !!}" />
 
         <link rel="stylesheet" href="{!! asset('css/pagespeed.css') !!}">
+
     </head>
 
     <body>

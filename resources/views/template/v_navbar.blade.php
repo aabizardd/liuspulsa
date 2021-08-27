@@ -15,9 +15,14 @@
                       <div class="collapse navbar-collapse main-menu-item" id="navbarSupportedContent">
                           <ul class="navbar-nav">
                               <li class="nav-item">
-                                  <a class="nav-link" href="index.html">Home</a>
+                                  <a class="nav-link" href="{{ url('/') }}">Beranda</a>
                               </li>
-                              <li class="nav-item dropdown">
+
+                              <li class="nav-item">
+                                  <a class="nav-link" href="{{ url('product') }}">Produk</a>
+                              </li>
+
+                              <!-- <li class="nav-item dropdown">
                                   <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_1"
                                       role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                       Shop
@@ -26,7 +31,7 @@
                                       <a class="dropdown-item" href="category.html"> shop category</a>
                                       <a class="dropdown-item" href="single-product.html">product details</a>
                                   </div>
-                              </li>
+                              </li> -->
                               <li class="nav-item dropdown">
                                   <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_3"
                                       role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

@@ -18,7 +18,7 @@ class HomeController extends Controller
     {
         $data = [
             'products' => $this->ProdukModel->getAll('tb_produk'),
-            'products_pulsa' => $this->ProdukModel->get_where_limit('tb_barang', ['id_produk' => 1], 8),
+            'products_pulsa' => $this->ProdukModel->getProdukSampel(),
         ];
 
         // dd($data['products_pulsa']);

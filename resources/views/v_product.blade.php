@@ -28,11 +28,20 @@
                         </div>
                         <div class="widgets_inner">
                             <ul class="list">
+                                <li>
+                                    <a href="/product"
+                                        style="<?=(request()->segment(2)) == "" ? "color: red;" : ""?>">Semua
+                                        Produk</a>
+                                    <span
+                                        style="<?=(request()->segment(2)) == "" ? "color: red;" : ""?>">({{ $count_barang }})</span>
+                                </li>
                                 @foreach ($kategori_produk as $kp)
 
                                 <li>
-                                    <a href="/product/{{$kp->id_produk}}">{{$kp->nama_produk}}</a>
-                                    <span>({{ $kp->total }})</span>
+                                    <a href="/product/{{$kp->id_produk}}"
+                                        style="<?=(request()->segment(2)) == $kp->id_produk ? "color: red;" : ""?>">{{$kp->nama_produk}}</a>
+                                    <span
+                                        style="<?=(request()->segment(2)) == $kp->id_produk ? "color: red;" : ""?>">({{ $kp->total }})</span>
                                 </li>
                                 @endforeach
                             </ul>
@@ -43,11 +52,10 @@
             </div>
             <div class="col-lg-9">
                 @if ($message = Session::get('error'))
-                <div class="alert alert-warning alert-dismissible fade show" role="alert"
-                    style="background-color: #e6151b;">
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
                     <strong>Maaf!</strong> {{ $message }}
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true" style="color: white;">&times;</span>
+                        <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 @endif
@@ -84,13 +92,14 @@
 
                     @if (count($products) > 0)
                     @foreach ($products as $pr)
-                    <div class="col-lg-4 col-sm-6">
+                    <div class="col-lg-4 col-sm-6 col-6">
                         <div class="single_product_item">
                             <img src='{!! asset("assets/img/barang/$pr->gambar_barang") !!}' alt="">
                             <div class="single_product_text">
                                 <h4>{{ $pr->nama_barang }}</h4>
                                 <h3>Rp. {{$pr->harga_barang}}</h3>
-                                <a href="#" class="add_cart">beli sekarang<i class="fas fa-cart-plus"></i></a>
+                                <a href="#" class="add_cart" data-toggle="modal" data-target="#modalBuy">beli
+                                    sekarang<i class="fas fa-cart-plus"></i></a>
                             </div>
                         </div>
                     </div>
@@ -101,7 +110,7 @@
                             <img alt="" src="{!! asset('assets/img/file-not-found.jpg') !!}">
                             <div class="single_product_text">
 
-                                <h4>Data Produk Tidak Tersedia</h4>
+                                <h4>Data Produk Belum Tersedia</h4>
 
 
                             </div>
@@ -195,5 +204,9 @@
         </div>
     </div>
 </section>
+
+
+
+
 
 @endsection

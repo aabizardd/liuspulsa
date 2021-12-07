@@ -50,7 +50,7 @@
                                 </div>
                             </div>
                             <div class="banner_img d-none d-lg-block" style="margin-top: -100px;">
-                                <img src="img/pulsa-caraousel.png" alt="">
+                                <img src="{!! asset('assets/img/pulsa-caraousel.png') !!}" alt="">
                             </div>
                         </div>
                     </div>
@@ -80,12 +80,12 @@
                         <div class="row align-items-center justify-content-between">
 
                             @foreach ($products as $product)
-                            <div class="col-lg-2 col-sm-6">
+                            <div class="col-lg-2 col-sm-6 col-md-4 col-6">
                                 <a href="/product/{{$product->id_produk}}">
                                     <div class="single_product_item">
                                         <img src='{!! asset("assets/img/products/$product->foto_produk") !!}' alt=""
-                                            height="150">
-                                        <div class="single_product_text">
+                                            style="width: 75%;margin: auto;">
+                                        <div class="single_product_text" style="margin:auto;">
                                             <h4>{{ $product->nama_produk }}</h4>
 
                                         </div>
@@ -125,14 +125,15 @@
                         <div class="row align-items-center justify-content-between">
 
                             @foreach ($products_pulsa as $pulsa)
-                            <div class="col-lg-3 col-sm-6">
+                            <div class="col-lg-3 col-sm-6 col-6">
                                 <div class="single_product_item">
-                                    <img src='{!! asset("assets/img/barang/$pulsa->gambar_barang") !!}' alt=""
-                                        width="100" height="150">
+                                    <img src='{!! asset("assets/img/barang/$pulsa->gambar_barang") !!}' alt="">
                                     <div class="single_product_text">
-                                        <h4>{{ $pulsa->nama_barang }}</h4>
+                                        <h4>{{ substr($pulsa->nama_barang,0,20). '...' }}</h4>
+                                        <p style="font-size: small;">{{ $pulsa->nama_barang }}</p>
                                         <h3>Rp. {{$pulsa->harga_barang}}</h3>
-                                        <a href="#" class="add_cart">Beli Sekarang<i class="fas fa-cart-plus"></i></a>
+                                        <a href="" class="add_cart" data-toggle="modal" data-target="#modalBuy">Beli
+                                            Sekarang<i class="fas fa-cart-plus"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -159,7 +160,7 @@
         <div class="row align-items-center justify-content-between">
             <div class="col-lg-6 col-md-6">
                 <div class="offer_img">
-                    <img src="img/pulsa-banner.jpg" alt="" style="border-radius: 20px;">
+                    <img src="{!! asset('assets/img/pulsa-banner.jpg') !!}" alt="" style="border-radius: 20px;">
                 </div>
             </div>
             <div class="col-lg-6 col-md-6">
@@ -252,11 +253,13 @@
         <div class="row align-items-center">
             <div class="col-lg-12">
                 <div class="single_client_logo">
-                    <img src="img/client_logo/xclient_logo_1.png.pagespeed.ic.k13XFWCmRf.png" alt="">
+                    <img src="{!! asset('assets/img/client_logo/xclient_logo_1.png.pagespeed.ic.k13XFWCmRf.png') !!}"
+                        alt="">
                 </div>
 
             </div>
         </div>
     </div>
+
 </section>
 @endsection

@@ -44,6 +44,7 @@ class ProductController extends Controller
             'keterangan_produk' => $keterangan,
             'products' => $products,
             'kategori_produk' => $this->ProdukModel->getKategoriProductCount(),
+            'count_barang' => $this->ProdukModel->getCountAll('tb_barang'),
         ];
 
         return view('v_product', $data);

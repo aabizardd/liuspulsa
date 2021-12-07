@@ -15,11 +15,13 @@
                       <div class="collapse navbar-collapse main-menu-item" id="navbarSupportedContent">
                           <ul class="navbar-nav">
                               <li class="nav-item">
-                                  <a class="nav-link" href="{{ url('/') }}">Beranda</a>
+                                  <a class="nav-link" href="{{ url('/') }}"
+                                      style="<?=(request()->segment(1)) == "" ? "color: red;font-weight: bold;" : ""?>">Beranda</a>
                               </li>
 
                               <li class="nav-item">
-                                  <a class="nav-link" href="{{ url('product') }}">Produk</a>
+                                  <a class="nav-link" href="{{ url('product') }}"
+                                      style="<?=(request()->segment(1)) == "product" ? "color: red;font-weight: bold;" : ""?>">Produk</a>
                               </li>
 
                               <!-- <li class="nav-item dropdown">
@@ -63,15 +65,29 @@
                       </div>
 
                       <div class="hearer_icon d-flex">
-                          <a id="search_1" href="javascript:void(0)"><i class="fas fa-search"></i></a>
-                          <a href="#"><i class="far fa-heart"></i></a>
-                          <div class="dropdown cart">
+                          <!-- <div class="dropdown cart">
                               <a class="dropdown-toggle" href="#" id="navbarDropdown3" role="button"
                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                   <i class="fas fa-cart-plus"></i>
                               </a>
+                          </div> -->
 
+                          <div class="dropdown">
+                              <a id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                  aria-expanded="false">
+                                  <i class="fas fa-user"></i> <b>Hai, Kamu!</b>
+                                  </button>
+                                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                      <a class="dropdown-item" href="/login">Login</a>
+                                      <a class="dropdown-item" href="#">Registrasi</a>
+                                      <a class="dropdown-item" href="#">Profil</a>
+                                      <a class="dropdown-item" href="#">Logout</a>
+                                      <a class="dropdown-item" href="#">Riwayat Pembelian</a>
+                                  </div>
                           </div>
+                          <!-- <a id="search_1" href="javascript:void(0)"><i class="fas fa-search"></i></a> -->
+                          <!-- <a href="#"></i></a> -->
+
                       </div>
 
                   </nav>

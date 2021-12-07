@@ -71,4 +71,16 @@ class ProdukModel extends Model
         return $name;
 
     }
+
+    public function getProdukSampel()
+    {
+
+        $data = DB::table('tb_barang')
+            ->groupBy('id_produk')
+            ->get();
+
+        return $data;
+
+    }
+
 }
